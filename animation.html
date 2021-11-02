@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #001d30;
+        animation: change 5s linear infinite;
+    }
+    @keyframes change {
+        to{
+            filter: hue-rotate(360deg);
+        }
+        
+    }
+    .loader{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(to top,#001d30 40%,#51eeee);
+        border-radius: 50%;
+        animation: rotate 2s linear infinite;
+    }
+    @keyframes rotate{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    .loader::before{
+        content: "";
+        position: absolute;
+        background: #001d30;
+        inset: 20px 20px 0 0;
+        border-radius: 50%;
+    }
+    .loader::after{
+        content: "";
+        position: absolute;
+        top: 50px;
+        right: -12px;
+        width: 50px;
+        height: 50px;
+        background: #51eeee;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #51eeee,0 0 25px #51eeee,0 0 50px #51eeee,0 0 75px #51eeee;
+    }
+
+
+.nawy{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background: #333;
+    overflow: hidden;
+}
+.nawy::before{
+    content: "aaaaaaaaaa";
+    position: absolute;
+    top: -42px;
+    left: 0;
+    font-size: 4em;
+    color: transparent;
+    text-decoration-style: wavy;
+    text-decoration-color: #fff;
+    text-decoration-line: underline;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: translateX(-1px);
+    }
+    100%{
+        transform: translateX(-55px);
+    }
+}
+</style>
+
+<body>
+    <section>
+        <div class="loader">
+        </div>
+    </section>
+
+    <!-- <div class="nawy"></div> -->
+</body>
+</html>
